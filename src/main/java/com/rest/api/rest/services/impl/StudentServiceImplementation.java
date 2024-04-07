@@ -1,22 +1,30 @@
 package com.rest.api.rest.services.impl;
 
 import com.rest.api.rest.entities.Student;
+import com.rest.api.rest.repositories.StudentRepository;
 import com.rest.api.rest.services.StudentServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+
 
 @Service
 public class StudentServiceImplementation implements StudentServices {
+
+    @Autowired
+    StudentRepository studentRepository;
     @Override
     public Student getStudent(String rollno) {
 
-        return null;
+     return studentRepository.findById(rollno).get();
+
     }
 
     @Override
     public Student saveStudent(Student student) {
-        return null;
+
+        studentRepository.save(student);
+        return student;
     }
 
 
