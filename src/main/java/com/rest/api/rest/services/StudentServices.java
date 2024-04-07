@@ -1,4 +1,11 @@
 package com.rest.api.rest.services;
 
-public class StudentServices {
+import com.rest.api.rest.entities.Student;
+
+import java.util.List;
+
+public interface StudentServices {
+
+    Student getStudent(String rollno);
+    Student saveStudent(Student student);
 }
