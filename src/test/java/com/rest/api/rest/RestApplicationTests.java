@@ -49,4 +49,13 @@ class RestApplicationTests {
 
 	}
 
+	@Test
+	public void testNameException() {
+		Student student = new Student();
+
+		Assertions.assertThrows(RuntimeException.class, () -> {
+			student.checkName("anish");
+		});
+	}
+
 }
